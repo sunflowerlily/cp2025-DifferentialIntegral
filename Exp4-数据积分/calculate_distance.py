@@ -5,35 +5,35 @@ import os
 
 def main():
     try:
-        # 获取数据文件路径
-        data_file = os.path.join(os.path.dirname(__file__), 'data', 'Velocities.txt')
+        # 1. 获取数据文件路径（TODO：使用相对路径）
+        data_file = None
         
-        # 读取数据
-        data = np.loadtxt(data_file)
-        t = data[:, 0]  # 时间列
-        v = data[:, 1]  # 速度列
+        # 2. 读取数据（TODO：使用numpy.loadtxt）
+        data = None
+        t = None  # 时间列
+        v = None  # 速度列
 
-        # 计算总距离
-        total_distance = np.trapz(v, t)
+        # 3. 计算总距离（TODO：使用numpy.trapz）
+        total_distance = None
         print(f"总运行距离: {total_distance:.2f} 米")
 
-        # 计算累积距离
-        distance = cumulative_trapezoid(v, t, initial=0)
+        # 4. 计算累积距离（TODO：使用cumulative_trapezoid）
+        distance = None
 
-        # 绘制图表
+        # 5. 绘制图表
         plt.figure(figsize=(10, 6))
-        plt.plot(t, v, 'b-', label='速度 (m/s)')
-        plt.plot(t, distance, 'r--', label='距离 (m)')
-        plt.title('速度与距离随时间变化')
-        plt.xlabel('时间 (秒)')
-        plt.ylabel('速度 (m/s) / 距离 (m)')
+        plt.plot(t, v, 'b-', label='Velocity (m/s)')
+        plt.plot(t, distance, 'r--', label='Distance (m)')
+        plt.title('Velocity and Distance vs Time')
+        plt.xlabel('Time (s)')
+        plt.ylabel('Velocity (m/s) / Distance (m)')
         plt.legend()
         plt.grid(True)
         plt.show()
 
     except FileNotFoundError:
-        print("错误：找不到数据文件 data/Velocities.txt")
-        print("请确保数据文件存在于项目目录的data文件夹中")
+        print("错误：找不到数据文件")
+        print("请确保数据文件存在于正确路径")
 
 if __name__ == '__main__':
     main()

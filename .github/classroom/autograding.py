@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GitHub Classroom 自动评分脚本
+GitHub Classroom 自动评分脚本 - 数值微分和积分实验
 """
 
 import os
@@ -10,22 +10,19 @@ import subprocess
 import pytest
 from pathlib import Path
 
-# 更新测试配置以匹配实际分形项目结构
+# 更新测试配置以匹配数值微分和积分项目结构
 TESTS = [
-    {"name": "实验一: 相似性迭代生成分形曲线", 
-     "file": "Exp1-相似性迭代生成分形曲线/tests/test_Iteration_koch_minkowski.py", 
+    {"name": "实验一: 函数微分算法比较", 
+     "file": "Exp1-微分算法/tests/test_numerical_differentiation.py", 
      "points": 10},
-    {"name": "实验二: L系统生成分形", 
-     "file": "Exp2-L系统分形/tests/test_L_system.py", 
+    {"name": "实验二: 核反应速率温度敏感性", 
+     "file": "Exp2-微分应用-核反应速率的温度敏感性/tests/test_rate_sensitivity.py", 
      "points": 10},
-    {"name": "实验三: 迭代函数系统分形", 
-     "file": "Exp3-迭代函数系统分形/tests/test_ifs.py", 
+    {"name": "实验三: Simpson法则 vs 梯形法则", 
+     "file": "Exp3-Simpson 法则 vs 梯形法则/tests/test_simpson_integration.py", 
      "points": 10},
-    {"name": "实验四: 曼德勃罗特集和朱利亚集", 
-     "file": "Exp4-曼德勃罗特集和朱利亚集分形/tests/test_mandelbrot_julia.py", 
-     "points": 10},
-    {"name": "实验五: 盒维数计算", 
-     "file": "Exp5-盒维数的计算/tests/test_box_counting.py", 
+    {"name": "实验四: 数据积分", 
+     "file": "Exp4-数据积分/tests/test_calculate_distance.py", 
      "points": 10}
 ]
 
